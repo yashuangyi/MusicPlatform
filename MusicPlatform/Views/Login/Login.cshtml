@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>音乐综合平台</title>
+    <script src="../../Source/packages/layui/layui.js"></script>
+    <script src="../../Scripts/Project/Login/login.js"></script>
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../../Source/packages/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-bg-gray" style="width:800px;height:500px;border:1px solid black;position:absolute;top:50%;left:50%;margin:-225px 0 0 -400px;text-align:center;">
+        <div>
+            <br /><br /><br /><br />
+            <img src="../../Source/images/login.jpg" style="width: 100px;height: 100px;" alt="图片加载失败啦..." title="Welcome~" />
+            <h3>
+                <i class="layui-icon layui-icon-rate-solid" style="font-size:30px;color:#ffd800;"></i>
+                <strong>音乐综合平台</strong>
+                <i class="layui-icon layui-icon-rate-solid" style="font-size:30px;color:#ffd800;"></i>
+            </h3>
+            <br /><br />
+            <i class="layui-icon layui-icon-user" style="font-size:20px;color:black;"></i>
+            <big>账号：</big>
+            <div class="layui-input-inline">
+                <input type="text" id="account" placeholder="请输入账号" class="layui-input" autocomplete="off" />
+            </div>
+            <br /><br />
+            <i class="layui-icon layui-icon-password" style="font-size:20px;color:black;"></i>
+            <big>密码：</big>
+            <div class="layui-input-inline">
+                <input type="password" id="password" placeholder="请输入密码" class="layui-input" autocomplete="off" />
+            </div>
+            <br /><br />
+            <button class="layui-btn" id="login">登录</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="layui-btn layui-btn-normal" onclick="btn_addUser()">注册</button>
+            <br /><br />
+            <button class="layui-btn layui-btn-warm" id="tourist">游客访问</button>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year</p>
+            </footer>
+        </div>
+    </div>
+
+    <!--注册的弹窗-->
+    <div style="padding-left:20px;padding-right:20px;padding-top:20px" id="div_addUser" hidden>
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="account" id="userAccount" lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" id="userPw" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>确认密码</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="pwAgain" id="userPwAgain" lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>名字</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" id="userName" lay-verify="required" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span style="color:red">*</span>喜爱音乐</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="love" id="userLove" lay-verify="required" style="width:400px;" placeholder="请输入您喜爱的音乐类型，以便为您提供合适的歌单" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <!--以下属性不显示，便于更新账户文件-->
+            <div class="layui-form-item" hidden>
+                <textarea id="userId" name="id"></textarea>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

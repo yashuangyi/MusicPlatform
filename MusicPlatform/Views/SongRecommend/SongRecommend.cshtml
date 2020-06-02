@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>歌曲库</title>
+    <script src="../../Scripts/jquery-3.4.1.js"></script>
+    <script src="../../Source/packages/layui/layui.js"></script>
+    <script src="../../Scripts/Project/SongRecommend/songRecommend.js"></script>
+    <link rel="stylesheet" href="../../Source/packages/layui/css/layui.css">
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md16">
+                <div class="layui-card">
+                    <div class="layui-card-header">歌曲推荐</div>
+                    <div class="layui-card-body">
+
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <form class="layui-form">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">歌曲查询</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="input" id="input" lay-verify="required" style="width:400px;" placeholder="请输入歌名，语言，风格或歌手名，支持模糊查询" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <button type="button" class="layui-btn layui-btn-normal" id="search">
+                                        <i class="layui-icon">&#xe615;</i>
+                                    </button>
+                                </div>
+                            </form>
+                        </blockquote>
+                        <blockquote class="layui-elem-quote layui-quote-nm">
+                            <!--歌库的表格-->
+                            <table id="table_song" lay-filter="table_song"></table>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--layui模版引擎文档(laytpl)-->
+    <!--修改表格的工具列-->
+    <script type="text/html" id="toolbar">
+        <a class="operation" style="margin-left:10px;" lay-event="play" title="播放">
+            <i class="layui-icon layui-icon-headset"></i>播放
+        </a>
+    </script>
+</body>
+</html>

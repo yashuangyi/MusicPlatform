@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>歌曲内容</title>
+    <script src="../../Source/packages/layui/layui.js"></script>	
+    <link rel="stylesheet" href="../../Source/packages/css/m-details.css">
+    <link rel="stylesheet" href="../../Source/packages/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Source/packages/layui/css/layui.css">
+    <link rel="stylesheet" href="../../Source/packages/layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+    
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md7">
+                        <div class="layui-card">
+                            <div class="layui-card-header">歌曲</div>
+                            <div class="layui-card-body">
+
+                                <input type="text" id="user_id" value="@ViewBag.UserId" hidden/>
+                                <input type="text" id="song_id" value="@ViewBag.SongId" hidden/>
+                                <input type="text" id="songPath" hidden/>
+                                <input type="text" id="wordPath" hidden/>
+                                <div class="m-content">
+                                    <!--播放器-->
+                                    <div class="m-player">
+                                        <div class="m-player-details">
+                                            <div class="m-title"><span id="title"></span></div>
+                                            <!--效果html开始-->
+                                            <div id="player">
+                                                <div class="ctrl">
+                                                    <div class="control">
+                                                        <div class="left lefticon">
+                                                            <div class="playback icon"></div>
+                                                            <a href="" class="img" download="" id="download"></a>
+                                                        </div>
+                                                        <div class="timer">0:00</div>
+                                                        <div class="progress">
+                                                            <div class="slider">
+                                                                <div class="loaded"></div>
+                                                                <div class="pace"></div>
+                                                            </div>
+                                                        </div>
+                                
+                                                        <div class="volume right">
+                                                            <div class="mute icon left"></div>
+                                                            <div class="slider left">
+                                                               <div class="pace"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                
+                                                </div>
+                                            </div>
+                                            <!--歌曲详细内容-->
+                                            <div class="m-song-details">
+                                                <div class="m-singer">歌手：<span id="singer"></span></div>
+                                                <div class="m-language">语言：<span id="language"></span></div>
+                                                <div class="m-album">风格：<span id="style"></span></div>
+                                                <div class="m-time">发布时间：<span id="time"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md5">
+                        <div class="layui-card">
+                            <div class="layui-card-header">歌词</div>
+                            <div class="layui-card-body" style="height:405px;">
+                                <iframe id="iframe" src="" frameborder="0" style="width:700px;height:405px;" class="layadmin-iframe"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        听友评论
+                        <i class="layui-icon layui-icon-tips" lay-tips="请文明评论噢~" lay-offset="5"></i>
+                    </div>
+                    <blockquote class="layui-elem-quote layui-quote-nm">
+                        <br>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">评论：</label>
+                                <div class="layui-input-inline" style="width:600px;">
+                                    <input type="text" name="input" id="input" lay-verify="required" style="width:600px;" placeholder="请输入评论" autocomplete="off" class="layui-input">
+                                </div>
+                                <button type="button" class="layui-btn layui-btn-normal" id="submit">提交</button>
+                            </div>
+                        </div>
+                        <br>
+                    </blockquote>
+                    <blockquote class="layui-elem-quote layui-quote-nm">
+                            <!--评论的表格-->
+                            <table id="table_comment" lay-filter="table_comment"></table>
+                        </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--layui模版引擎文档(laytpl)-->
+    <!--修改表格的状态列-->
+    <script type="text/html" id="statusbar">
+        {{# if(d.UserId === @ViewBag.UserId){ }}
+        <span style="color: #A2CD5A">我</span>
+        {{#  } }}
+        {{# if(d.UserId !== @ViewBag.UserId){ }}
+        {{ d.Name }}
+        {{#  } }}
+    </script>
+
+    <!--layui模版引擎文档(laytpl)-->
+    <!--修改表格的工具列-->
+    <script type="text/html" id="toolbar">
+        {{# if(d.UserId === @ViewBag.UserId){ }}
+        <a class="operation" lay-event="del" title="删除">
+            <i class="layui-icon layui-icon-delete"></i>删除
+        </a>
+        {{#  } }}
+    </script>
+
+    <script src="../../Scripts/Project/SongContent/songContent.js"></script>
+    <script src="../../Source/packages/js/jquery-1.7.2.min.js"></script>
+    <script src="../../Source/packages/js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script src="../../Source/packages/js/m-details.js"></script>
+
+</body>
+</html>

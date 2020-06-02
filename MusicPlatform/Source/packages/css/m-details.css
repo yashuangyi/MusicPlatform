@@ -1,0 +1,76 @@
+/*通用部分*/
+* { margin: 0; padding: 0; font-family: "微软雅黑"; font-weight: normal; }
+a { text-decoration: none; color: #333; }
+img { border: 0; }
+a:hover { color: #188eee; }
+ul li { list-style: none; }
+.m-content { width: 750px; margin: 0 auto; }
+/*播放器*/
+.m-content .m-player { width: 750px; height: 296px; margin-top: 30px; margin-left: 18px; border-bottom: 1px solid #ddd; }
+.m-content .m-player .m-player-details { width: 962px; height: 266px; position: relative; float: left; }
+.m-content .m-player .m-player-details .m-title { width: 662px; font-size: 40px; color: #333; margin-top: 0px; }
+.m-song-details { margin-top: 10px; width: 662px; font-size: 14px; color: #666; line-height: 25px; }
+.m-song-details .m-singer span, .m-album span, .m-language span { display: inline-block; text-indent: 3em; }
+.m-song-details .m-time span { display: inline-block; text-indent: 1em; }
+.download { width: 280px; height: 36px; position: absolute; left: 662px; bottom: 0px; }
+.download ul { width: 280px; height: 36px; position: relative; }
+.download ul li { width: 106px; height: 36px; float: left; margin-right: 20px; border: 1px solid #188EEE; cursor: pointer; border-radius: 2px; letter-spacing: 2px; text-align: center; line-height: 36px; }
+.download .collection { background: #188EEE; color: #fff; }
+.download .collection a { color: #fff; font-size: 14px; }
+.download .collection:hover { background: #1581d9; }
+.download .shared a { color: #188EEE; font-size: 14px; }
+.download li.shared:hover { background: #f7f7f7; }
+/* 分享样式修改 */
+/*.bdshare-button-style0-16 {float: left;}*/
+.bdsharebuttonbox a { text-decoration: none; }
+.bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more { background-image: none!important; margin: 0 auto!important; line-height: 36px!important; font-size: 14px!important; padding-left: 37px!important; color: #188EEE!important; }
+.bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more:hover { color: #188eee; background-image: none!important; }
+.m-content .m-player .m-cover { width: 220px; height: 266px; float: right; }
+/*音频部分*/
+a { outline: none; }
+#player { width: 662px; height: 100px; position: relative; margin-top: 5px; }
+#player .ctrl { text-shadow: 0 1px 2px #000; line-height: 16px; }
+#player .ctrl .control { margin-top: 10px; height: 25px; }
+#player .ctrl .control .lefticon { width: 662px; height: 30px; }
+#player .ctrl .control .left .img { height: 30px; width: 30px; margin-left: 20px; display: inline-block; background-image: url(allicons.png); background-repeat: no-repeat; background-position: -5px -368px; }
+#player .ctrl .control .left .icon { display: inline-block; cursor: pointer; width: 30px; height: 30px; -moz-transition: 0.3s; -webkit-transition: 0.3s; -o-transition: 0.3s; transition: 0.3s; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; user-select: none; }
+#player .ctrl .icon:hover, #player .ctrl .icon.enable { opacity: 1; }
+#player .ctrl .icon:active { opacity: 0.3; }
+#player .ctrl .control .playback { background-image: url(allicons.png); background-repeat: no-repeat; background-position: -50px -436px; }
+#player .ctrl .control .playback.playing { background-image: url(allicons.png); background-repeat: no-repeat; background-position: -5px -436px; }
+#player .ctrl .control .timer { width: 438px; height: 26px; line-height: 26px; font-size: 14px; color: #333; text-align: right; }
+#player .ctrl .control .progress { width: 438px; height: 13px; margin-top: 10px; float: left; }
+#player .ctrl .control .progress .slider { background-color: #282a31; height: 13px; width: 438px; position: relative; cursor: pointer; -moz-border-radius: 25px; -webkit-border-radius: 25px; -o-border-radius: 25px; -ms-border-radius: 25px; -khtml-border-radius: 25px; border-radius: 25px; -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; }
+#player .ctrl .control .progress .slider:hover a, .slider.enable a { opacity: 1; color: #FFF; }
+#player .ctrl .control .progress .slider a { background: url(allicons.png) no-repeat -5px -405px; margin-left: -5px; margin-top: -8px; position: absolute; opacity: 1; width: 26px; height: 26px; -moz-border-radius: 50%; -webkit-border-radius: 50%; -o-border-radius: 50%; -ms-border-radius: 50%; -khtml-border-radius: 50%; border-radius: 50%; -moz-transition: opacity 0.3s; -webkit-transition: opacity 0.3s; -o-transition: opacity 0.3s; transition: opacity 0.3s; }
+#player .ctrl .control .progress .slider .loaded, .slider .pace { position: absolute; height: 100%; opacity: 0.7; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; -ms-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; }
+#player .ctrl .control .progress .slider .loaded { background: rgba(255, 255, 255, 0.1); }
+#player .ctrl .control .progress .slider .pace { background: #258fb8; }
+#player .ctrl .control .volume { width: 180px; height: 35px; float: left; margin-left: 30px; }
+#player .ctrl .control .volume .icon { background-repeat: no-repeat; background-position: center; cursor: pointer; width: 30px; height: 30px; -moz-transition: 0.3s; -webkit-transition: 0.3s; -o-transition: 0.3s; transition: 0.3s; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -o-user-select: none; user-select: none; }
+#player .ctrl .control .volume .mute { background: url(allicons.png) no-repeat -50px -334px; width: 32px; height: 32px; float: left; }
+#player .ctrl .control .volume .mute.enable { background: url(allicons.png) no-repeat -5px -334px; }
+#player .ctrl .control .volume .slider { background-color: #282a31; float: left; height: 10px; width: 80px; margin: 12px 20px; position: relative; cursor: pointer; -moz-border-radius: 25px; -webkit-border-radius: 25px; -o-border-radius: 25px; -ms-border-radius: 25px; -khtml-border-radius: 25px; border-radius: 25px; -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset; }
+#player .ctrl .control .volume .slider:hover a, .slider.enable a { opacity: 1; }
+#player .ctrl .control .volume .slider a { margin-left: -5px; position: absolute; opacity: 1; -moz-border-radius: 50%; -webkit-border-radius: 50%; -o-border-radius: 50%; -ms-border-radius: 50%; -khtml-border-radius: 50%; border-radius: 50%; -moz-transition: opacity 0.3s; -webkit-transition: opacity 0.3s; -o-transition: opacity 0.3s; transition: opacity 0.1s; }
+#player .ctrl .control .volume .slider .loaded, .slider .pace { position: absolute; height: 100%; opacity: 0.7; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; -ms-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; }
+#player .ctrl .control .volume .slider .loaded { background: rgba(255, 255, 255, 0.1); }
+#player .ctrl .control .volume .slider .pace { background: #258fb8; }
+/*播放器歌词详细内容*/
+.m-content .m-detail { width: 1175px; margin-left: 25px; margin-top: 15px; }
+.m-content .m-detail .m-detail-song { width: 955px; float: left; }
+.m-content .m-detail .m-songwords { font-size: 14px; color: #333 }
+.m-content .m-detail .m-detail-song p { font-size: 14px; color: #999; height: 30px; line-height: 30px; }
+.m-content .m-detail .m-detail-song #ctshow { cursor: pointer; margin-top: 16px; color: #188eee; font-size: 14px; }
+<!--
+.m-content .m-detail .m-detail-song #ctshow font { }
+-->
+.m-content .m-detail .m-detail-song #ctshow i { padding-left: 5px; font-size: 16px; font-weight: bold; }
+.m-content .m-detail .m-song { width: 220px; float: left; }
+.m-content .m-detail .m-song .m-hotsong { width: 220px; height: 220px; border-bottom: 1px solid #ddd; }
+.m-content .m-detail .m-song .m-hotsong .m-hot { color: #333; font-size: 14px; }
+.m-content .m-detail .m-song .m-hotsong .m-song-name span, a { font-size: 12px; color: #666; line-height: 30px; }
+.m-content .m-detail .m-song .m-hotsong .m-song-name span { padding-left: 123px; }
+.m-content .m-detail .m-song .m-songmv span { display: block; margin-top: 20px; font-size: 14px; color: #333; }
+.m-content .m-detail .m-song .m-songmv .m-mvpic { width: 220px; height: 165px; margin-top: 14px }
+.m-content .m-detail .m-song .m-songmv a { color: #188eee; font-size: 14px; }
